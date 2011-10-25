@@ -231,9 +231,11 @@ int main(int argc, char *argv[])
 	// Create the compute kernel in the program we wish to run
 	//
 #ifdef USING_GPU
-	kernel = clCreateKernel(program, "sobel3D", &err);
+//	kernel = clCreateKernel(program, "sobel3D", &err);
+    kernel = clCreateKernel(program, "testGPU", &err);
 #else
-    kernel = clCreateKernel(program, "sobel3DCPU", &err);
+//    kernel = clCreateKernel(program, "sobel3DCPU", &err);
+    kernel = clCreateKernel(program, "testGPU", &err);
 #endif
     
 	if (!kernel || err != CL_SUCCESS){
@@ -311,22 +313,9 @@ int main(int argc, char *argv[])
         cleanKill(EXIT_FAILURE);
     }    
     
-    // THIS IS POORLY DOCUMENTED ELSEWHERE!
-    // each independed image object steam needs its own local & global data spec
-    // thus while I use 1 input and 1 output object local[0] for local input
-    // and local[1] for local output
     
-    //    localWorksize[0] = 1;
-    //    localWorksize[1] = localWorksize[0];
-    //    globalWorksize[0] = width*height;
-    //    globalWorksize[1] = globalWorksize[0];
-    
-    //    size_t localWorksize[3] = { 16, 16 , 1};
-    //    size_t globalWorksize[3] =  { RoundUp((int)localWorksize[0], width), RoundUp((int)localWorksize[1], height), RoundUp((int)localWorksize[2], depth) };
-    
-    //cout << "max work item sizes" << CL_DEVICE_MAX_WORK_ITEM_SIZES << endl;
-    //cout << "max workgroup size is : " << CL_DEVICE_MAX_WORK_GROUP_SIZE << endl;
-    cout << "max kernel size is : " << CL_KERNEL_WORK_GROUP_SIZE << endl;
+
+    //cout << "max kernel size is : " << CL_KERNEL_WORK_GROUP_SIZE << endl;
     size_t localWorksize[3] = {0, 0, 0};
     //size_t localWorksize[3] = {3, 3, 3};
     
@@ -403,8 +392,9 @@ int main(int argc, char *argv[])
         openCLUtilities->SaveImage((char*)newName.c_str(), buffer, width, height);   
         
     } 
+    #ifdef VolumetricRendering
     plotMain(argc, argv, bigBuffer, width, height, depth);
-    
+    #endif
     // Shutdown and cleanup
 	//
 	cleanKill(EXIT_SUCCESS);

@@ -33,7 +33,7 @@
 #pragma OPENCL EXTENSION cl_khr_fp64 : enable
 
 #define FastFourierTransform
-#define VolumetricRendering
+//#define VolumetricRendering
 
 
 
@@ -354,6 +354,104 @@ __local static inline int DFTCPU(int dir,int m,float *x1,float *y1)
 }
 
 
+__kernel
+void testGPU(__read_only image3d_t srcImg,
+             __write_only image3d_t dstImg,
+             sampler_t sampler,
+             int width, int height, int depth)
+{
+//    int x = get_group_id(0) + get_global_id(0);
+//    int y = get_group_id(1) + get_local_id(1);
+//    int z = get_group_id(2) + get_local_id(2);
+//    
+//    if(((int)(x%3) != (int)0) || ((int)(y%3) != (int)0) || ((int)(z%3) != (int)0)){
+//        return;
+//    }
+//    
+//    int4 startImageCoord = (int4) (x - 1, y - 1, z - 1, 1);
+//    int4 endImageCoord   = (int4) (x + 1, y + 1, z + 1, 1);
+//    int4 outImageCoord = (int4) (x, y, z, 1);
+//    
+//    if (outImageCoord.x < width && outImageCoord.y < height && outImageCoord.z < depth)
+//    {
+//        float4 thisIn = (float4)(0.0f, 0.0f, 0.0f, 0.0f);
+//        
+//        float DaR[3*3*3];
+//        float DaI[3*3*3];
+//        
+//        float4 WriteDaR[3*3*3];
+//        float4 WriteDaI[3*3*3];
+//
+//        for(int c = 0; c < 3; c++){
+//            for(int z = startImageCoord.z; z <= endImageCoord.z; z++){
+//                for(int y = startImageCoord.y; y <= endImageCoord.y; y++){
+//                    for(int x = startImageCoord.x; x <= endImageCoord.x; x++){
+//                        thisIn = read_imagef(srcImg, sampler, (int4)(x,y,z,1));
+//                        if(c == 0){
+//                            DaR[(z - startImageCoord.z)*3*3 + (y - startImageCoord.y)*3 + (x - startImageCoord.x)] = (float)thisIn.x;
+//                        }
+//                        else if(c == 1){
+//                            DaR[(z - startImageCoord.z)*3*3 + (y - startImageCoord.y)*3 + (x - startImageCoord.x)] = (float)thisIn.y;
+//                        }
+//                        else{
+//                            DaR[(z - startImageCoord.z)*3*3 + (y - startImageCoord.y)*3 + (x - startImageCoord.x)] = (float)thisIn.z;
+//                        }
+//                        DaI[(z - startImageCoord.z)*3*3 + (y - startImageCoord.y)*3 + (x - startImageCoord.x)] = (float)0.0f;
+//                    }
+//                }
+//            }
+//            
+//            if(c == 0){
+//                for (int i = 0; i < 3; i ++) {
+//                    for (int j = 0; j < 3; j ++) {
+//                        for (int k = 0; k < 3; k ++) {
+//                            WriteDaR[(i*3*3)+(j*3)+k].x = (float)DaR[(i*3*3)+(j*3)+k];
+//                            WriteDaI[(i*3*3)+(j*3)+k].x = (float)DaI[(i*3*3)+(j*3)+k];
+//                        }
+//                    }
+//                }
+//            }
+//            else if(c == 1){
+//                for (int i = 0; i < 3; i ++) {
+//                    for (int j = 0; j < 3; j ++) {
+//                        for (int k = 0; k < 3; k ++) {
+//                            WriteDaR[(i*3*3)+(j*3)+k].y = (float)DaR[(i*3*3)+(j*3)+k];
+//                            WriteDaI[(i*3*3)+(j*3)+k].y = (float)DaI[(i*3*3)+(j*3)+k];                        }
+//                    }
+//                }
+//            }
+//            else{
+//                for (int i = 0; i < 3; i ++) {
+//                    for (int j = 0; j < 3; j ++) {
+//                        for (int k = 0; k < 3; k ++) {
+//                            WriteDaR[(i*3*3)+(j*3)+k].z = (float)DaR[(i*3*3)+(j*3)+k];
+//                            WriteDaI[(i*3*3)+(j*3)+k].z = (float)DaI[(i*3*3)+(j*3)+k];
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//        
+//        //write this channel out
+//        for(int z = startImageCoord.z; z <= endImageCoord.z; z++){
+//            for(int y = startImageCoord.y; y <= endImageCoord.y; y++){
+//                for(int x= startImageCoord.x; x <= endImageCoord.x; x++){
+//                    #ifdef VolumetricRendering
+//                    if(WriteDaR[(z - startImageCoord.z)*3*3 + (y - startImageCoord.y)*3 + (x - startImageCoord.x)].x > 0.05f && WriteDaR[(z - startImageCoord.z)*3*3 + (y - startImageCoord.y)*3 + (x - startImageCoord.x)].y > 0.05f && WriteDaR[(z - startImageCoord.z)*3*3 + (y - startImageCoord.y)*3 + (x - startImageCoord.x)].z > 0.05f){
+//                        write_imagef(dstImg, (int4)(x,y,z,1),(float4)(WriteDaR[(z - startImageCoord.z)*3*3 + (y - startImageCoord.y)*3 + (x - startImageCoord.x)].x,WriteDaR[(z - startImageCoord.z)*3*3 + (y - startImageCoord.y)*3 + (x - startImageCoord.x)].y,WriteDaR[(z - startImageCoord.z)*3*3 + (y - startImageCoord.y)*3 + (x - startImageCoord.x)].z,1)); 
+//                        //write_imagef(dstImg, outImageCoord, (float4)(WriteDaR[z - startImageCoord.z][y - startImageCoord.y][x - startImageCoord.x].x,WriteDaR[z - startImageCoord.z][y - startImageCoord.y][x - startImageCoord.x].y,WriteDaR[z - startImageCoord.z][y - startImageCoord.y][x - startImageCoord.x].z,1));
+//                    }
+//                    #else
+//                    //output over these output coordinates
+//                    write_imagef(dstImg, (int4)(x,y,z,1),(float4)(WriteDaR[(z - startImageCoord.z)*3*3 + (y - startImageCoord.y)*3 + (x - startImageCoord.x)].x,WriteDaR[(z - startImageCoord.z)*3*3 + (y - startImageCoord.y)*3 + (x - startImageCoord.x)].y,WriteDaR[(z - startImageCoord.z)*3*3 + (y - startImageCoord.y)*3 + (x - startImageCoord.x)].z,1)); 
+//                    #endif
+//                }
+//            }
+//        }
+    }
+    
+}
+
 /* --------------------------> Real work happens past this point <--------------------------------- */
 __kernel
 void sobel3D(__read_only image3d_t srcImg,
@@ -362,9 +460,14 @@ void sobel3D(__read_only image3d_t srcImg,
            int width, int height, int depth)
 {
 
-    int x = (int)get_global_id(0);
-    int y = (int)get_global_id(1);
-    int z = (int)get_global_id(2);
+//    int x = (int)get_global_id(0);
+//    int y = (int)get_global_id(1);
+//    int z = (int)get_global_id(2);
+    
+    //this approach is needed for working with workgroups
+    int x = get_group_id(0) + get_local_id(0);
+    int y = get_group_id(1) + get_local_id(1);
+    int z = get_group_id(2) + get_local_id(2);
     
     //3*3*3 window do computation on
     if(x%3 != 0 || y%3 != 0 || z%3 != 0){
@@ -372,20 +475,20 @@ void sobel3D(__read_only image3d_t srcImg,
     }
     
     //w is ignored? I believe w is included as all data types are a power of 2
-    int4 startImageCoord = (int4) (get_global_id(0) - 1,
-                                   get_global_id(1) - 1,
-                                   get_global_id(2) - 1, 
+    int4 startImageCoord = (int4) (x - 1,
+                                   y - 1,
+                                   z - 1, 
                                    1);
     
-    int4 endImageCoord   = (int4) (get_global_id(0) + 1,
-                                   get_global_id(1) + 1, 
+    int4 endImageCoord   = (int4) (x + 1,
+                                   y + 1, 
                                    //remove plus 1 to get indexing proper
-                                   get_global_id(2) + 1 /* + 1*/, 
+                                   z + 1 /* + 1*/, 
                                    1);
     
-    int4 outImageCoord = (int4) (get_global_id(0),
-                                 get_global_id(1),
-                                 get_global_id(2), 
+    int4 outImageCoord = (int4) (x,
+                                 y,
+                                 z, 
                                  1);
     
     if (outImageCoord.x < width && outImageCoord.y < height && outImageCoord.z < depth)
@@ -1043,11 +1146,11 @@ void sobel3DCPU(__read_only image3d_t srcImg,
              __write_only image3d_t dstImg,
              sampler_t sampler,
              int width, int height, int depth)
-{
+{    
     
-    int x = (int)get_global_id(0);
-    int y = (int)get_global_id(1);
-    int z = (int)get_global_id(2);
+    int x = get_group_id(0) + get_local_id(0);
+    int y = get_group_id(1) + get_local_id(1);
+    int z = get_group_id(2) + get_local_id(2);
     
     if(x%3 != 0 || y%3 != 0 || z%3 != 0){
         return;
@@ -1058,20 +1161,20 @@ void sobel3DCPU(__read_only image3d_t srcImg,
     //}
     
     //w is ignored? I believe w is included as all data types are a power of 2
-    int4 startImageCoord = (int4) (get_global_id(0) - 1,
-                                   get_global_id(1) - 1,
-                                   get_global_id(2) - 1, 
+    int4 startImageCoord = (int4) (x - 1,
+                                   y - 1,
+                                   z - 1, 
                                    1);
     
-    int4 endImageCoord   = (int4) (get_global_id(0) + 1,
-                                   get_global_id(1) + 1, 
+    int4 endImageCoord   = (int4) (x + 1,
+                                   y + 1, 
                                    //remove plus 1 to get indexing proper
-                                   get_global_id(2) + 1 /* + 1*/, 
+                                   z + 1 /* + 1*/, 
                                    1);
     
-    int4 outImageCoord = (int4) (get_global_id(0),
-                                 get_global_id(1),
-                                 get_global_id(2), 
+    int4 outImageCoord = (int4) (x,
+                                 y,
+                                 z, 
                                  1);
     
     if (outImageCoord.x < width && outImageCoord.y < height && outImageCoord.z < depth)
