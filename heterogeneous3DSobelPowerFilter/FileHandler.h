@@ -1,6 +1,6 @@
 /*
  *  FileHandler.h
- *  MedialAxisTransform
+ *  heterogeneous3DSobelPowerFilter
  *
  *
  *  Created by Beau Johnston on 25/08/11.

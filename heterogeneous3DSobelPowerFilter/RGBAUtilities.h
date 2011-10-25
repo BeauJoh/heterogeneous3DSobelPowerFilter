@@ -1,6 +1,6 @@
 /*
  *  RGBAUtilities.h
- *  MedialAxisTransform
+ *  heterogeneous3DSobelPowerFilter
  *
  *
  *  Created by Beau Johnston on 13/07/11.

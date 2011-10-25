@@ -1,6 +1,6 @@
 /*
  *  MarchingCubes.cpp
- *  MedialAxisTransform
+ *  heterogeneous3DSobelPowerFilter
  *
  *  Initially created by Erik Smistad. 
  *

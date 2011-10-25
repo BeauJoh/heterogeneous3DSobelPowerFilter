@@ -1,6 +1,6 @@
 /*
  *  openGLVisualiser.cpp
- *  MedialAxisTransform
+ *  heterogeneous3DSobelPowerFilter
  *
  *
  *  Created by Beau Johnston on 31/08/11. 

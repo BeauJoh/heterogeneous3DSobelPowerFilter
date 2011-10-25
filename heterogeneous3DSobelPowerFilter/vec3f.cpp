@@ -1,6 +1,6 @@
 /*
  *  Vec3f.cpp
- *  MedialAxisTransform
+ *  heterogeneous3DSobelPowerFilter
  *
  *  Initially created by www.videotutorialsrock.com, File for "Terrain" 
  *  lesson of the OpenGL tutorial
