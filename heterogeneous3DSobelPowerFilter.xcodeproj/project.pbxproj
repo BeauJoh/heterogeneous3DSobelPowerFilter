@@ -1,0 +1,414 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8BAC86251456407000898203 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BAC86241456407000898203 /* main.cpp */; };
+		8BAC86271456407000898203 /* heterogeneous3DSobelPowerFilter.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BAC86261456407000898203 /* heterogeneous3DSobelPowerFilter.1 */; };
+		8BAC863F1456416E00898203 /* FileHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BAC86311456416E00898203 /* FileHandler.cpp */; };
+		8BAC86401456416E00898203 /* marchingcubes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BAC86341456416E00898203 /* marchingcubes.cpp */; };
+		8BAC86411456416E00898203 /* my_kernel.cl in Sources */ = {isa = PBXBuildFile; fileRef = 8BAC86361456416E00898203 /* my_kernel.cl */; };
+		8BAC86421456416E00898203 /* openCLUtilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BAC86371456416E00898203 /* openCLUtilities.cpp */; };
+		8BAC86431456416E00898203 /* openGLVisualiser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BAC86391456416E00898203 /* openGLVisualiser.cpp */; };
+		8BAC86441456416E00898203 /* RGBAUtilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BAC863B1456416E00898203 /* RGBAUtilities.cpp */; };
+		8BAC86451456416E00898203 /* vec3f.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BAC863D1456416E00898203 /* vec3f.cpp */; };
+		8BAC86471456418B00898203 /* OpenCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAC86461456418B00898203 /* OpenCL.framework */; };
+		8BAC86491456419400898203 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAC86481456419400898203 /* OpenGL.framework */; };
+		8BAC864B1456419A00898203 /* libpng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAC864A1456419A00898203 /* libpng.framework */; };
+		8BAC864D145641A600898203 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAC864C145641A600898203 /* GLUT.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8BAC861E1456407000898203 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				8BAC86271456407000898203 /* heterogeneous3DSobelPowerFilter.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8BAC86201456407000898203 /* heterogeneous3DSobelPowerFilter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = heterogeneous3DSobelPowerFilter; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BAC86241456407000898203 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		8BAC86261456407000898203 /* heterogeneous3DSobelPowerFilter.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = heterogeneous3DSobelPowerFilter.1; sourceTree = "<group>"; };
+		8BAC86311456416E00898203 /* FileHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileHandler.cpp; sourceTree = "<group>"; };
+		8BAC86321456416E00898203 /* FileHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHandler.h; sourceTree = "<group>"; };
+		8BAC86331456416E00898203 /* global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = global.h; sourceTree = "<group>"; };
+		8BAC86341456416E00898203 /* marchingcubes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = marchingcubes.cpp; sourceTree = "<group>"; };
+		8BAC86351456416E00898203 /* marchingcubes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = marchingcubes.h; sourceTree = "<group>"; };
+		8BAC86361456416E00898203 /* my_kernel.cl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.opencl; path = my_kernel.cl; sourceTree = "<group>"; };
+		8BAC86371456416E00898203 /* openCLUtilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = openCLUtilities.cpp; sourceTree = "<group>"; };
+		8BAC86381456416E00898203 /* openCLUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = openCLUtilities.h; sourceTree = "<group>"; };
+		8BAC86391456416E00898203 /* openGLVisualiser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = openGLVisualiser.cpp; sourceTree = "<group>"; };
+		8BAC863A1456416E00898203 /* openGLVisualiser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = openGLVisualiser.h; sourceTree = "<group>"; };
+		8BAC863B1456416E00898203 /* RGBAUtilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RGBAUtilities.cpp; sourceTree = "<group>"; };
+		8BAC863C1456416E00898203 /* RGBAUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGBAUtilities.h; sourceTree = "<group>"; };
+		8BAC863D1456416E00898203 /* vec3f.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vec3f.cpp; sourceTree = "<group>"; };
+		8BAC863E1456416E00898203 /* vec3f.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vec3f.h; sourceTree = "<group>"; };
+		8BAC86461456418B00898203 /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = System/Library/Frameworks/OpenCL.framework; sourceTree = SDKROOT; };
+		8BAC86481456419400898203 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		8BAC864A1456419A00898203 /* libpng.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libpng.framework; path = Library/Frameworks/libpng.framework; sourceTree = SDKROOT; };
+		8BAC864C145641A600898203 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		8BAC86D31456439700898203 /* out1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out1.png; sourceTree = "<group>"; };
+		8BAC86D41456439700898203 /* out10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out10.png; sourceTree = "<group>"; };
+		8BAC86D51456439700898203 /* out11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out11.png; sourceTree = "<group>"; };
+		8BAC86D61456439700898203 /* out12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out12.png; sourceTree = "<group>"; };
+		8BAC86D71456439700898203 /* out13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out13.png; sourceTree = "<group>"; };
+		8BAC86D81456439700898203 /* out14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out14.png; sourceTree = "<group>"; };
+		8BAC86D91456439700898203 /* out15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out15.png; sourceTree = "<group>"; };
+		8BAC86DA1456439700898203 /* out16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out16.png; sourceTree = "<group>"; };
+		8BAC86DB1456439700898203 /* out17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out17.png; sourceTree = "<group>"; };
+		8BAC86DC1456439700898203 /* out18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out18.png; sourceTree = "<group>"; };
+		8BAC86DD1456439700898203 /* out19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out19.png; sourceTree = "<group>"; };
+		8BAC86DE1456439700898203 /* out2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out2.png; sourceTree = "<group>"; };
+		8BAC86DF1456439700898203 /* out20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out20.png; sourceTree = "<group>"; };
+		8BAC86E01456439700898203 /* out21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out21.png; sourceTree = "<group>"; };
+		8BAC86E11456439700898203 /* out22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out22.png; sourceTree = "<group>"; };
+		8BAC86E21456439700898203 /* out23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out23.png; sourceTree = "<group>"; };
+		8BAC86E31456439700898203 /* out24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out24.png; sourceTree = "<group>"; };
+		8BAC86E41456439700898203 /* out25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out25.png; sourceTree = "<group>"; };
+		8BAC86E51456439700898203 /* out26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out26.png; sourceTree = "<group>"; };
+		8BAC86E61456439700898203 /* out27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out27.png; sourceTree = "<group>"; };
+		8BAC86E71456439700898203 /* out28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out28.png; sourceTree = "<group>"; };
+		8BAC86E81456439700898203 /* out29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out29.png; sourceTree = "<group>"; };
+		8BAC86E91456439700898203 /* out3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out3.png; sourceTree = "<group>"; };
+		8BAC86EA1456439700898203 /* out30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out30.png; sourceTree = "<group>"; };
+		8BAC86EB1456439700898203 /* out31.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out31.png; sourceTree = "<group>"; };
+		8BAC86EC1456439700898203 /* out32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out32.png; sourceTree = "<group>"; };
+		8BAC86ED1456439700898203 /* out33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out33.png; sourceTree = "<group>"; };
+		8BAC86EE1456439700898203 /* out34.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out34.png; sourceTree = "<group>"; };
+		8BAC86EF1456439700898203 /* out35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out35.png; sourceTree = "<group>"; };
+		8BAC86F01456439700898203 /* out36.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out36.png; sourceTree = "<group>"; };
+		8BAC86F11456439700898203 /* out37.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out37.png; sourceTree = "<group>"; };
+		8BAC86F21456439700898203 /* out38.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out38.png; sourceTree = "<group>"; };
+		8BAC86F31456439700898203 /* out39.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out39.png; sourceTree = "<group>"; };
+		8BAC86F41456439700898203 /* out4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out4.png; sourceTree = "<group>"; };
+		8BAC86F51456439700898203 /* out40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out40.png; sourceTree = "<group>"; };
+		8BAC86F61456439700898203 /* out41.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out41.png; sourceTree = "<group>"; };
+		8BAC86F71456439700898203 /* out42.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out42.png; sourceTree = "<group>"; };
+		8BAC86F81456439700898203 /* out43.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out43.png; sourceTree = "<group>"; };
+		8BAC86F91456439700898203 /* out44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out44.png; sourceTree = "<group>"; };
+		8BAC86FA1456439700898203 /* out45.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out45.png; sourceTree = "<group>"; };
+		8BAC86FB1456439700898203 /* out46.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out46.png; sourceTree = "<group>"; };
+		8BAC86FC1456439700898203 /* out47.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out47.png; sourceTree = "<group>"; };
+		8BAC86FD1456439700898203 /* out48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out48.png; sourceTree = "<group>"; };
+		8BAC86FE1456439700898203 /* out49.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out49.png; sourceTree = "<group>"; };
+		8BAC86FF1456439700898203 /* out5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out5.png; sourceTree = "<group>"; };
+		8BAC87001456439700898203 /* out50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out50.png; sourceTree = "<group>"; };
+		8BAC87011456439700898203 /* out51.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out51.png; sourceTree = "<group>"; };
+		8BAC87021456439700898203 /* out52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out52.png; sourceTree = "<group>"; };
+		8BAC87031456439700898203 /* out53.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out53.png; sourceTree = "<group>"; };
+		8BAC87041456439700898203 /* out54.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out54.png; sourceTree = "<group>"; };
+		8BAC87051456439700898203 /* out55.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out55.png; sourceTree = "<group>"; };
+		8BAC87061456439700898203 /* out56.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out56.png; sourceTree = "<group>"; };
+		8BAC87071456439700898203 /* out57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out57.png; sourceTree = "<group>"; };
+		8BAC87081456439700898203 /* out58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out58.png; sourceTree = "<group>"; };
+		8BAC87091456439700898203 /* out59.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out59.png; sourceTree = "<group>"; };
+		8BAC870A1456439700898203 /* out6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out6.png; sourceTree = "<group>"; };
+		8BAC870B1456439700898203 /* out60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out60.png; sourceTree = "<group>"; };
+		8BAC870C1456439700898203 /* out61.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out61.png; sourceTree = "<group>"; };
+		8BAC870D1456439700898203 /* out62.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out62.png; sourceTree = "<group>"; };
+		8BAC870E1456439700898203 /* out63.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out63.png; sourceTree = "<group>"; };
+		8BAC870F1456439700898203 /* out64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out64.png; sourceTree = "<group>"; };
+		8BAC87101456439700898203 /* out65.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out65.png; sourceTree = "<group>"; };
+		8BAC87111456439700898203 /* out66.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out66.png; sourceTree = "<group>"; };
+		8BAC87121456439700898203 /* out7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out7.png; sourceTree = "<group>"; };
+		8BAC87131456439700898203 /* out8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out8.png; sourceTree = "<group>"; };
+		8BAC87141456439700898203 /* out9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out9.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8BAC861D1456407000898203 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BAC864D145641A600898203 /* GLUT.framework in Frameworks */,
+				8BAC864B1456419A00898203 /* libpng.framework in Frameworks */,
+				8BAC86491456419400898203 /* OpenGL.framework in Frameworks */,
+				8BAC86471456418B00898203 /* OpenCL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8BAC86151456407000898203 = {
+			isa = PBXGroup;
+			children = (
+				8BAC8715145643AD00898203 /* outputDataset */,
+				8BAC86D21456439700898203 /* inputDataset */,
+				8BAC864C145641A600898203 /* GLUT.framework */,
+				8BAC864A1456419A00898203 /* libpng.framework */,
+				8BAC86481456419400898203 /* OpenGL.framework */,
+				8BAC86461456418B00898203 /* OpenCL.framework */,
+				8BAC86231456407000898203 /* heterogeneous3DSobelPowerFilter */,
+				8BAC86211456407000898203 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8BAC86211456407000898203 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8BAC86201456407000898203 /* heterogeneous3DSobelPowerFilter */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8BAC86231456407000898203 /* heterogeneous3DSobelPowerFilter */ = {
+			isa = PBXGroup;
+			children = (
+				8BAC86311456416E00898203 /* FileHandler.cpp */,
+				8BAC86321456416E00898203 /* FileHandler.h */,
+				8BAC86331456416E00898203 /* global.h */,
+				8BAC86341456416E00898203 /* marchingcubes.cpp */,
+				8BAC86351456416E00898203 /* marchingcubes.h */,
+				8BAC86361456416E00898203 /* my_kernel.cl */,
+				8BAC86371456416E00898203 /* openCLUtilities.cpp */,
+				8BAC86381456416E00898203 /* openCLUtilities.h */,
+				8BAC86391456416E00898203 /* openGLVisualiser.cpp */,
+				8BAC863A1456416E00898203 /* openGLVisualiser.h */,
+				8BAC863B1456416E00898203 /* RGBAUtilities.cpp */,
+				8BAC863C1456416E00898203 /* RGBAUtilities.h */,
+				8BAC863D1456416E00898203 /* vec3f.cpp */,
+				8BAC863E1456416E00898203 /* vec3f.h */,
+				8BAC86241456407000898203 /* main.cpp */,
+				8BAC86261456407000898203 /* heterogeneous3DSobelPowerFilter.1 */,
+			);
+			path = heterogeneous3DSobelPowerFilter;
+			sourceTree = "<group>";
+		};
+		8BAC86D21456439700898203 /* inputDataset */ = {
+			isa = PBXGroup;
+			children = (
+				8BAC86D31456439700898203 /* out1.png */,
+				8BAC86D41456439700898203 /* out10.png */,
+				8BAC86D51456439700898203 /* out11.png */,
+				8BAC86D61456439700898203 /* out12.png */,
+				8BAC86D71456439700898203 /* out13.png */,
+				8BAC86D81456439700898203 /* out14.png */,
+				8BAC86D91456439700898203 /* out15.png */,
+				8BAC86DA1456439700898203 /* out16.png */,
+				8BAC86DB1456439700898203 /* out17.png */,
+				8BAC86DC1456439700898203 /* out18.png */,
+				8BAC86DD1456439700898203 /* out19.png */,
+				8BAC86DE1456439700898203 /* out2.png */,
+				8BAC86DF1456439700898203 /* out20.png */,
+				8BAC86E01456439700898203 /* out21.png */,
+				8BAC86E11456439700898203 /* out22.png */,
+				8BAC86E21456439700898203 /* out23.png */,
+				8BAC86E31456439700898203 /* out24.png */,
+				8BAC86E41456439700898203 /* out25.png */,
+				8BAC86E51456439700898203 /* out26.png */,
+				8BAC86E61456439700898203 /* out27.png */,
+				8BAC86E71456439700898203 /* out28.png */,
+				8BAC86E81456439700898203 /* out29.png */,
+				8BAC86E91456439700898203 /* out3.png */,
+				8BAC86EA1456439700898203 /* out30.png */,
+				8BAC86EB1456439700898203 /* out31.png */,
+				8BAC86EC1456439700898203 /* out32.png */,
+				8BAC86ED1456439700898203 /* out33.png */,
+				8BAC86EE1456439700898203 /* out34.png */,
+				8BAC86EF1456439700898203 /* out35.png */,
+				8BAC86F01456439700898203 /* out36.png */,
+				8BAC86F11456439700898203 /* out37.png */,
+				8BAC86F21456439700898203 /* out38.png */,
+				8BAC86F31456439700898203 /* out39.png */,
+				8BAC86F41456439700898203 /* out4.png */,
+				8BAC86F51456439700898203 /* out40.png */,
+				8BAC86F61456439700898203 /* out41.png */,
+				8BAC86F71456439700898203 /* out42.png */,
+				8BAC86F81456439700898203 /* out43.png */,
+				8BAC86F91456439700898203 /* out44.png */,
+				8BAC86FA1456439700898203 /* out45.png */,
+				8BAC86FB1456439700898203 /* out46.png */,
+				8BAC86FC1456439700898203 /* out47.png */,
+				8BAC86FD1456439700898203 /* out48.png */,
+				8BAC86FE1456439700898203 /* out49.png */,
+				8BAC86FF1456439700898203 /* out5.png */,
+				8BAC87001456439700898203 /* out50.png */,
+				8BAC87011456439700898203 /* out51.png */,
+				8BAC87021456439700898203 /* out52.png */,
+				8BAC87031456439700898203 /* out53.png */,
+				8BAC87041456439700898203 /* out54.png */,
+				8BAC87051456439700898203 /* out55.png */,
+				8BAC87061456439700898203 /* out56.png */,
+				8BAC87071456439700898203 /* out57.png */,
+				8BAC87081456439700898203 /* out58.png */,
+				8BAC87091456439700898203 /* out59.png */,
+				8BAC870A1456439700898203 /* out6.png */,
+				8BAC870B1456439700898203 /* out60.png */,
+				8BAC870C1456439700898203 /* out61.png */,
+				8BAC870D1456439700898203 /* out62.png */,
+				8BAC870E1456439700898203 /* out63.png */,
+				8BAC870F1456439700898203 /* out64.png */,
+				8BAC87101456439700898203 /* out65.png */,
+				8BAC87111456439700898203 /* out66.png */,
+				8BAC87121456439700898203 /* out7.png */,
+				8BAC87131456439700898203 /* out8.png */,
+				8BAC87141456439700898203 /* out9.png */,
+			);
+			path = inputDataset;
+			sourceTree = "<group>";
+		};
+		8BAC8715145643AD00898203 /* outputDataset */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = outputDataset;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8BAC861F1456407000898203 /* heterogeneous3DSobelPowerFilter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BAC862A1456407000898203 /* Build configuration list for PBXNativeTarget "heterogeneous3DSobelPowerFilter" */;
+			buildPhases = (
+				8BAC861C1456407000898203 /* Sources */,
+				8BAC861D1456407000898203 /* Frameworks */,
+				8BAC861E1456407000898203 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = heterogeneous3DSobelPowerFilter;
+			productName = heterogeneous3DSobelPowerFilter;
+			productReference = 8BAC86201456407000898203 /* heterogeneous3DSobelPowerFilter */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8BAC86171456407000898203 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "University Of New England";
+			};
+			buildConfigurationList = 8BAC861A1456407000898203 /* Build configuration list for PBXProject "heterogeneous3DSobelPowerFilter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8BAC86151456407000898203;
+			productRefGroup = 8BAC86211456407000898203 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8BAC861F1456407000898203 /* heterogeneous3DSobelPowerFilter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8BAC861C1456407000898203 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BAC86251456407000898203 /* main.cpp in Sources */,
+				8BAC863F1456416E00898203 /* FileHandler.cpp in Sources */,
+				8BAC86401456416E00898203 /* marchingcubes.cpp in Sources */,
+				8BAC86411456416E00898203 /* my_kernel.cl in Sources */,
+				8BAC86421456416E00898203 /* openCLUtilities.cpp in Sources */,
+				8BAC86431456416E00898203 /* openGLVisualiser.cpp in Sources */,
+				8BAC86441456416E00898203 /* RGBAUtilities.cpp in Sources */,
+				8BAC86451456416E00898203 /* vec3f.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8BAC86281456407000898203 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8BAC86291456407000898203 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		8BAC862B1456407000898203 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8BAC862C1456407000898203 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8BAC861A1456407000898203 /* Build configuration list for PBXProject "heterogeneous3DSobelPowerFilter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BAC86281456407000898203 /* Debug */,
+				8BAC86291456407000898203 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BAC862A1456407000898203 /* Build configuration list for PBXNativeTarget "heterogeneous3DSobelPowerFilter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BAC862B1456407000898203 /* Debug */,
+				8BAC862C1456407000898203 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8BAC86171456407000898203 /* Project object */;
+}
