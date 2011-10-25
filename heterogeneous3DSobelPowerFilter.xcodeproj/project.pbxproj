@@ -123,6 +123,7 @@
 		8BAC87121456439700898203 /* out7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out7.png; sourceTree = "<group>"; };
 		8BAC87131456439700898203 /* out8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out8.png; sourceTree = "<group>"; };
 		8BAC87141456439700898203 /* out9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = out9.png; sourceTree = "<group>"; };
+		8BAC8716145644F900898203 /* outputDataset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = outputDataset; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +144,7 @@
 		8BAC86151456407000898203 = {
 			isa = PBXGroup;
 			children = (
-				8BAC8715145643AD00898203 /* outputDataset */,
+				8BAC8716145644F900898203 /* outputDataset */,
 				8BAC86D21456439700898203 /* inputDataset */,
 				8BAC864C145641A600898203 /* GLUT.framework */,
 				8BAC864A1456419A00898203 /* libpng.framework */,
@@ -256,13 +257,6 @@
 				8BAC87141456439700898203 /* out9.png */,
 			);
 			path = inputDataset;
-			sourceTree = "<group>";
-		};
-		8BAC8715145643AD00898203 /* outputDataset */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = outputDataset;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
