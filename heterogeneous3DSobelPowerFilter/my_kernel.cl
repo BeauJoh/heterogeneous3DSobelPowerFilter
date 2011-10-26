@@ -448,7 +448,7 @@ void testGPU(__read_only image3d_t srcImg,
 //                }
 //            }
 //        }
-    }
+//    }
     
 }
 

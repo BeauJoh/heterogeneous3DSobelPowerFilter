@@ -231,11 +231,10 @@ int main(int argc, char *argv[])
 	// Create the compute kernel in the program we wish to run
 	//
 #ifdef USING_GPU
-//	kernel = clCreateKernel(program, "sobel3D", &err);
-    kernel = clCreateKernel(program, "testGPU", &err);
+	kernel = clCreateKernel(program, "sobel3D", &err);
 #else
-//    kernel = clCreateKernel(program, "sobel3DCPU", &err);
-    kernel = clCreateKernel(program, "testGPU", &err);
+    //kernel = clCreateKernel(program, "sobel3DCPU", &err);
+    kernel = clCreateKernel(program, "sobel3D", &err);
 #endif
     
 	if (!kernel || err != CL_SUCCESS){
@@ -316,8 +315,8 @@ int main(int argc, char *argv[])
     
 
     //cout << "max kernel size is : " << CL_KERNEL_WORK_GROUP_SIZE << endl;
-    size_t localWorksize[3] = {0, 0, 0};
-    //size_t localWorksize[3] = {3, 3, 3};
+    //size_t localWorksize[3] = {0, 0, 0};
+    size_t localWorksize[3] = {3, 3, 3};
     
     //cout << "Image Width " << getImageWidth() << endl;
     //cout << "Scaled Image Width " << RoundUp((int)localWorksize[0], getImageWidth()) << endl;
@@ -329,7 +328,7 @@ int main(int argc, char *argv[])
     
     clock_t startTime, stopTime;
     startTime = clock();
-    
+        
 	err = clEnqueueNDRangeKernel(commands, kernel, 3, localWorksize, globalWorksize, NULL, NULL, NULL, NULL);
     
 	if (openCLUtilities->there_was_an_error(err))

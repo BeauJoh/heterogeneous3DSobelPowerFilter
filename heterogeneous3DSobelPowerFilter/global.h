@@ -39,7 +39,7 @@ void destroyClassObjects(void);
 void cleanKill(int errNumber);
 
 //uncomment this to use GPU
-#define USING_GPU
+//#define USING_GPU
 //#define VolumetricRendering
 
 #endif
