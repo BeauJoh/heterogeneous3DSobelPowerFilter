@@ -35,6 +35,7 @@
 #include <getopt.h>
 #include <string>
 #include <iostream>
+
 using namespace std;
 
 // getopt argument parser variables
@@ -175,18 +176,47 @@ int main(int argc, char *argv[])
     gpu = 0;
 #endif
 	
-    if(clGetDeviceIDs(NULL, gpu ? CL_DEVICE_TYPE_GPU : CL_DEVICE_TYPE_CPU, 1, &device_id, NULL) != CL_SUCCESS)  {
+    cl_uint num_devices;
+    
+    if(clGetDeviceIDs(NULL, gpu ? CL_DEVICE_TYPE_GPU : CL_DEVICE_TYPE_CPU, 1, &device_id, &num_devices) != CL_SUCCESS)  {
 		cout << "Failed to create a device group!" << endl;
         cleanKill(EXIT_FAILURE);
     }
-	
+    
 	// Create a compute context 
 	//
 	if(!(context = clCreateContext(0, 1, &device_id, NULL, NULL, &err))){
 		cout << "Failed to create a compute context!" << endl;
         cleanKill(EXIT_FAILURE);
     }
-	
+    
+    //use only one core applying device fission (not supported on intel i7 early MBP)
+//#ifdef DEBUG
+//    printf("number of devices %i\n", num_devices);
+//    char buffer[2048];
+//    size_t len;
+//    
+//    clGetDeviceInfo(device_id,
+//                           CL_DEVICE_EXTENSIONS,
+//                           sizeof(buffer),
+//                           buffer,
+//                           &len);
+//    
+//    printf("device id has values : \n %s \n\n\n", buffer);
+//    
+//    cl_device_partition_property_ext props[] = {
+//        CL_DEVICE_PARTITION_EQUALLY_EXT, 1,
+//        CL_PROPERTIES_LIST_END_EXT,
+//        0
+//    };
+//    
+//#endif
+    
+//    if (devices.getInfo<CL_DEVICE_EXTENSIONS>(). find(
+//                                                      "cl_ext_device_fission") == std::string::npos) {
+//        exit(-1); }
+    
+    
 	// Create a command commands
 	//
 	if(!(commands = clCreateCommandQueue(context, device_id, 0, &err))) {
@@ -234,7 +264,8 @@ int main(int argc, char *argv[])
 	kernel = clCreateKernel(program, "sobel3D", &err);
 #else
     //kernel = clCreateKernel(program, "sobel3DCPU", &err);
-    kernel = clCreateKernel(program, "sobel3D", &err);
+    //kernel = clCreateKernel(program, "sobel3D", &err);
+    kernel = clCreateKernel(program, "sobel3DwInternalStructureEmphasis", &err);
 #endif
     
 	if (!kernel || err != CL_SUCCESS){

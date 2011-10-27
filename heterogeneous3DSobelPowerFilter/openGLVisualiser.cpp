@@ -419,6 +419,13 @@ void Init(void)
     DisplayUsability();
     
 	glLoadIdentity();
+    
+    //set starting coordinates for show
+    cameraX = 5;
+    cameraY = 6;
+    cameraZ = 45;
+    cameraYDegrees = -147;
+    cameraXDegrees = 173;
 }
 
 void Display(void)
@@ -514,6 +521,7 @@ void Wait(float seconds)
 
 void Update(void)
 {	
+    //printf("cameraX = %d;\n cameraY = %d;\n cameraZ = %d;\n cameraYDegrees = %d;\n cameraXDegrees = %d;\n\n\n",cameraX,cameraY,cameraZ,cameraYDegrees,cameraXDegrees);
     // Wait and Update the clock
 	clock_t clocks_elapsed = clock() - clock_ticks; 
 	if ((float) clocks_elapsed < (float) CLOCKS_PER_SEC / (float) FRAMES_PER_SEC)

@@ -44,11 +44,14 @@
 #include "RGBAUtilities.h"
 #include "FileHandler.h"
 
+//device fission is used to run individual cores of a CPU with a specfic kernel
+#define USE_CL_DEVICE_FISSION 1
 
 // openCL is dependent on specific libraries, depending on the OS
 #if defined (__APPLE__)  && defined (__MACH__)
     //macOSX openCL Framework
     #include <OpenCL/opencl.h>
+    #include <OpenCL/cl.h>
 #else
     //it must be for a LinuxBox
     //linux openCL Library
