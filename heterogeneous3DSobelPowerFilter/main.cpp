@@ -35,6 +35,7 @@
 #include <getopt.h>
 #include <string>
 #include <iostream>
+#include <time.h>
 
 using namespace std;
 
@@ -357,9 +358,10 @@ int main(int argc, char *argv[])
     //  Start up the kernels in the GPUs
     //
     
-    clock_t startTime, stopTime;
-    startTime = clock();
-        
+    timeval startTime, stopTime;
+
+    gettimeofday(&startTime, NULL);
+    
 	err = clEnqueueNDRangeKernel(commands, kernel, 3, localWorksize, globalWorksize, NULL, NULL, NULL, NULL);
     
 	if (openCLUtilities->there_was_an_error(err))
@@ -374,8 +376,12 @@ int main(int argc, char *argv[])
 	clFinish(commands);
     
     // stop timer and show times
-    stopTime = clock();
-    printf("Time to perform convolution was %f seconds\n", (double)(stopTime-startTime)/CLOCKS_PER_SEC);
+    gettimeofday(&stopTime, NULL);
+    double elapsedTime;
+    
+    elapsedTime = (stopTime.tv_sec - startTime.tv_sec)*1000.0;
+    elapsedTime += (stopTime.tv_usec - startTime.tv_usec) /1000.0;
+    cout << elapsedTime << "ms.\n";
     
     
 	// Read back the results from the device to verify the output
