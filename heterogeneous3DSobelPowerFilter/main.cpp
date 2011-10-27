@@ -381,7 +381,7 @@ int main(int argc, char *argv[])
     
     elapsedTime = (stopTime.tv_sec - startTime.tv_sec)*1000.0;
     elapsedTime += (stopTime.tv_usec - startTime.tv_usec) /1000.0;
-    cout << elapsedTime << "ms.\n";
+    printf("%f  ms.\n", elapsedTime);
     
     
 	// Read back the results from the device to verify the output
